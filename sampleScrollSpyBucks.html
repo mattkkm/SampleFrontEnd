@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script data-require="angular.js@1.2.7" data-semver="1.2.7" src="http://code.angularjs.org/1.2.7/angular.js"></script>
+  <link href="style.css" rel="stylesheet" />
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      position: relative; 
+      padding-top:70px;
+  }
+    .navbar{
+      height:70px;
+    }
+    .navbar-brand {
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+    .navbar-nav li a{
+      margin: 15px auto;
+      padding: 10px 20px;
+      text-align:center;
+      text-transform: uppercase;
+font-weight: bold;
+letter-spacing: 2px;
+    }
+    .navbar-right {
+      margin-right:20px;
+    }
+    .container{
+      padding:0px 0px;
+    }
+    .floatRight{
+      float:right;
+    }
+    .projectImages{
+      width:100%;
+      height:auto;
+      padding: 20px;
+      max-width:500px;
+      border-radius:20px;
+      border-width: 2px;
+      border-color:white;
+      border-style: solid;
+      margin: 5px;
+    }
+    #about{
+     // height:500px;
+      background-color:teal; 
+      padding-top:50px;
+      padding-bottom:50px;
+      font-size: 24px;
+      text-transform:uppercase;
+      text-align:center;
+    }
+    #portfolio{
+      min-height:500px; 
+      background-color: green; 
+      padding-top:50px;
+      margin:0px auto;
+      text-align:center;    }
+    #contact{height:500px; background-color:yellow;  padding-top:50px;}
+  </style>
+  <script>// Instantiate the app, the 'myApp' parameter must 
+// match what is in ng-app
+var myApp = angular.module('myApp', []);
+
+// Create the controller, the 'ToddlerCtrl' parameter 
+// must match an ng-controller directive
+myApp.controller('ToddlerCtrl', function ($scope) {
+  
+  // Define an array of Toddler objects
+  $scope.bucks = " berks" ;
+  $scope.toddlers = [
+    {
+      "name": "Toddler One",
+      "birthday": "1/1/2011",
+      "happy": true
+    },
+    {
+      "name": "Toddler Two",
+      "birthday": "2/2/2011",
+      "happy": true
+    },
+    {
+      "name": "Toddler Three",
+      "birthday": "3/3/2011",
+      "happy": false
+    }
+  ];
+  
+});
+</script>
+	</head>	
+	<body ng-controller="ToddlerCtrl" data-spy="scroll" data-target=".navbar" data-offset="100">
+	  
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">{{bucks}}</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+  <div id="about" class="container">
+    <div class="col-xs-12 col-sm-8"> Bucks are going to the moon when they win the championship. Bucks in 6.</div>
+    <div class="col-xs-12 col-sm-4">
+       <img src="http://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_500x500/mil.png" height="100px"/>
+      
+    </div>
+  </div>
+  <div id="portfolio" class="container">
+    <div class="col-xs-12 col-sm-6" ng-repeat="toddler in toddlers">
+      <img class="projectImages"src="http://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_500x500/mil.png" height="100px"/>
+
+    </div>
+  </div>
+  <div id="contact" class="container">
+  </div>
+</div>
+  
+	</body>					
+
+
+
+</html>
+
